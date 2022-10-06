@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block titulo %} Login {% endblock %}
+{% block tituloSeccion %} <h3>Login</h3> {% endblock %}
+{% block contenido %} 
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <liv>{{ message }}</liv>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form action="" method="post" novalidate>
+        {{formularioLoginVista.hidden_tag()}}
+        <div>
+            {{formularioLoginVista.usuario.label}}
+            <br>
+            {{formularioLoginVista.usuario}}
+            {% for error in formularioLoginVista.usuario.errors %}
+            <span style="color:red">
+                {{error}}
+            </span>
+            {% endfor %}
+        </div>
+        <div>
+            {{formularioLoginVista.clave.label}}
+            <br>
+            {{formularioLoginVista.clave}}
+            {% for error in formularioLoginVista.clave.errors %}
+            <span style="color:red">
+                {{error}}
+            </span>
+            {% endfor %}
+        </div>
+        <div>
+            {{formularioLoginVista.recordar.label}}
+            <br>
+            {{formularioLoginVista.recordar}}
+        </div>
+        <div>
+            {{formularioLoginVista.enviar}}
+        </div>
+        <div>
+            <a href="/registrarusuario">Crear usuario</a>
+        </div>
+    </form>
+{% endblock %}

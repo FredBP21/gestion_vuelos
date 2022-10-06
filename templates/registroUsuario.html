@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block titulo %} Registrar usuario {% endblock %}
+{% block tituloSeccion %} <h3>Registrar Usuario</h3> {% endblock %}
+{% block contenido %} 
+    <form action="" method="post" novalidate>
+        <div>
+            {{formRegisUsuVista.nombre.label}}
+            {{formRegisUsuVista.nombre}}
+            <br>
+            {{formRegisUsuVista.genero.label}}
+            {{formRegisUsuVista.genero}}
+            <br>
+            {{formRegisUsuVista.correo.label}}
+            {{formRegisUsuVista.correo}}
+            <br>
+            {{formRegisUsuVista.clave.label}}
+            {{formRegisUsuVista.clave}}
+            <br>
+            {{formRegisUsuVista.identicacion.label}}
+            {{formRegisUsuVista.identicacion}}
+            <br>
+            {{formRegisUsuVista.roles.label}}
+            {{formRegisUsuVista.roles}}
+            <br>
+            {{formRegisUsuVista.estado.label}}
+            {{formRegisUsuVista.estado}}
+            <br>
+            <hr>
+            {{formRegisUsuVista.crear}}
+        </div>        
+    </form>
+{% endblock %}
